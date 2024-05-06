@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    font-family: 'Orbitron', sans-serif;
+}
+a {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #365E37;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* style header */
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0px 0px 0px;
+}
+
+.navigation {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 40px 0px 20px 0px;
+}
+
+.regions {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+}
+
+.phototheme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.themebordeaux {
+    width: 300px;
+    height: 50px;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #590404;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px 0px 10px 10px;
+    margin: 0px;
+}
+
+.themebourgogne {
+    width: 300px;
+    height: 50px;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #9F1F36;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px 0px 10px 10px;
+    margin: 0px;
+}
+
+.thememonde {
+    width: 300px;
+    height: 50px;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #BD5911;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px 0px 10px 10px;
+    margin: 0px;
+}
+
+.themelexique {
+    width: 300px;
+    height: 50px;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #BDB611;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px 0px 10px 10px;
+    margin: 0px;
+}
+
+
+.bandeautheme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
