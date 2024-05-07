@@ -10,10 +10,16 @@ a {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
     color: #365E37;
     text-decoration: none;
+}
+
+p{
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
 }
 
 h2 {
@@ -31,20 +37,6 @@ h3 {
     font-size: 36px;
     color: #590404;
     margin: -10px 0px 10px 0px;
-}
-
-h4 {
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 30px;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 18px;
-    letter-spacing: 1px;
-    color: #365E37;
-    font-weight: bold;
-    text-decoration: none;
 }
 
 /* style header */
@@ -70,6 +62,11 @@ h4 {
     justify-content: space-around;
     align-items: center;
     gap: 30px;
+}
+
+.nomsregions{
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
 }
 
 .phototheme {
@@ -203,8 +200,6 @@ h4 {
     justify-content: center;
 }
 
-
-
 .tarif {
     width: 180px;
     height: 350px;
@@ -261,21 +256,17 @@ h4 {
     border-top: 1px solid #365E37;
 }
 .footer {
-    height: 80px;
     font-family: "Montserrat", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 20px 0px 0px 0px
 }
 .coordonnees {
-    width: 800px;
-    background-color: #ffffff;
-    text-align: center;
-}
-.contact-text {
-    color: #000000;
-    font-size: 24px;
-    font-family: "Montserrat", sans-serif;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .info {
     display: inline-block;
@@ -283,14 +274,10 @@ h4 {
     color: #000000;
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
-    margin: 0px 20px 0px 20px;
+    margin: 0px 20px 0px 20px
+
 }
-.mail {
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    display: inline-block;
-    color: #000000;
-}
+
 .infosplus {
     color: #000000;
     text-align: center;
