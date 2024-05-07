@@ -3,7 +3,7 @@ body {
     padding: 0;
     font-family: "Montserrat", sans-serif;
     font-family: 'Orbitron', sans-serif;
-    font-family : "Great Vibes";
+    font-family : "Kaushan Script", cursive ;
 }
 a {
     margin: 0 auto;
@@ -21,12 +21,19 @@ a {
 
 h2 {
     display: flex;
-    font-family: "Great Vibes", sans-serif;
-    font-size: 50px;
-    color: #365E37;
+    font-family : "Kaushan Script", cursive ;
+    font-size: 48px;
+    line-height: 52px;
+    color: #590404;
+    justify-content: center;
     text-align: center;
-    margin: 0 auto;
-    padding: 15px ;
+}
+
+h3 {
+    font-family : "Kaushan Script", cursive ;
+    font-size: 36px;
+    color: #590404;
+    margin: -10px 0px 10px 0px;
 }
 
 /* style header */
@@ -127,10 +134,7 @@ h2 {
 }
 
 
-.taillebouteille{
-    height: 350px;
-    padding: 10px;
-}
+
 
 .produit{
     width: 800px;
@@ -139,10 +143,16 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 0px 20px 0px;
+    padding: 40px 0px 20px 0px;
+}
+
+.taillebouteille{
+    width: 120px;
 }
 
 .phototexte{
+    width: 500px;
+    height: 400px;
     margin: 0 auto;
     align-items: center;
     justify-content: center;
@@ -150,9 +160,9 @@ h2 {
 
 .bloc {
     margin: 0 auto;
-    width: 300px;
+    width: 250px;
     height: 80px;
-    border-width:2px;
+    border-width:1px;
     border-style:solid;
     border-color:#590404;
     border-radius: 10px 10px 10px 10px;
@@ -180,4 +190,32 @@ h2 {
     margin: 30px;
     align-items: center;
     justify-content: center;
+}
+
+
+
+.tarif {
+    width: 180px;
+    height: 350px;
+    text-align: center;
+}
+
+.petittextcolonne {
+    font-family: "Montserrat", sans-serif;;
+    font-size: 11px;
+    line-height: 13px;
+    color: #000000;
+    text-align: center;
+}
+
+.picto {
+    width: 60px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.bouton {
+    margin: 0 auto;
+    padding: -5px;
 }

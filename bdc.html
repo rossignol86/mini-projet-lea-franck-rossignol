@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bon de commande</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 800px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .productColumn {
+            width: 600px;
+        }
+
+        .quantityColumn {
+            max-width: 100px;
+        }
+
+        .priceColumn, .totalColumn {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <table id="orderTable">
+        <tr>
+            <th class="productColumn">Produits</th>
+            <th class="quantityColumn">Quantités</th>
+            <th class="priceColumn">Prix en euros</th>
+            <th class="totalColumn">Total</th>
+        </tr>
+        <tr>
+            <td>Produit 1</td>
+            <td><input type="number" class="quantity" min="0" value="0"></td>
+            <td>10 €</td>
+            <td><span class="total">0</span> €</td>
+        </tr>
+        <tr>
+            <td>Produit 2</td>
+            <td><input type="number" class="quantity" min="0" value="0"></td>
+            <td>20 €</td>
+            <td><span class="total">0</span> €</td>
+        </tr>
+        <tr>
+            <td>Produit 3</td>
+            <td><input type="number" class="quantity" min="0" value="0"></td>
+            <td>30 €</td>
+            <td><span class="total">0</span> €</td>
+        </tr>
+        <tr>
+            <td>Produit 4</td>
+            <td><input type="number" class="quantity" min="0" value="0"></td>
+            <td>40 €</td>
+            <td><span class="total">0</span> €</td>
+        </tr>
+        <tr>
+            <td colspan="3">Frais de transport</td>
+            <td><span id="shipping">20</span> €</td>
+        </tr>
+        <tr>
+            <td colspan="3">Total</td>
+            <td><span id="grandTotal">0</span> €</td>
+        </tr>
+    </table>
+
+    <script>
+        const orderTable = document.getElementById('orderTable');
+        const shippingSpan = document.getElementById('shipping');
+        const grandTotalSpan = document.getElementById('grandTotal');
+
+        const updateTotal = () => {
+            let total = 0;
+            const rows = orderTable.getElementsByTagName('tr');
+            for (let i = 1; i < rows.length - 2; i++) {
+                const row = rows[i];
+                const quantity = parseInt(row.getElementsByClassName('quantity')[0].value);
+                const price = 10; // Prix fixe de 10 euros par produit
+                const rowTotal = quantity * price;
+                row.getElementsByClassName('total')[0].innerText = rowTotal.toFixed(2);
+                total += rowTotal;
+            }
+            const shipping = parseFloat(shippingSpan.innerText);
+            const grandTotal = total + shipping;
+            grandTotalSpan.innerText = grandTotal.toFixed(2);
+        };
+
+        orderTable.addEventListener('input', updateTotal);
+
+        updateTotal();
+    </script>
+</body>
+</html>
