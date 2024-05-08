@@ -18,98 +18,116 @@
             width: 800px;
         }
 
-        th, td {
+        th {
             border: 1px solid #ddd;
             padding: 8px;
-            text-align: left;
-        }
-
-        th {
             background-color: #f2f2f2;
         }
-
-        .productColumn {
-            width: 600px;
+        
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
         }
 
-        .quantityColumn {
-            max-width: 100px;
+        .colonneproduit {
+            width: 500px;
         }
 
-        .priceColumn, .totalColumn {
+        .colonnequantite {
+            width: 50px;
+        }
+
+        .colonneprix, .colonnetotal {
             width: 100px;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
-
-    <container>
-        <table id="orderTable">
+<container>
+    <table id="orderTable">
+        <tr>
+            <th class="colonneproduit">Produits</th>
+            <th class="colonnequantite">Quantités</th>
+            <th class="colonneprix">Prix* en €</th>
+            <th class="colonnetotal">Total</th>
+        </tr>
+        <tr>
+            <td>Produit 1</td>
+            <td><input type="nombre" class="quantite" min="0" value="0"></td>
+            <td><span class="prix">188</span> €</td>
+            <td><span class="total">0</span> €</td>
+        </tr>
+        <tr>
+            <td>Produit 2</td>
+            <td><input type="nombre" class="quantite" min="0" value="0"></td>
+            <td><span class="prix">320</span> €</td>
+            <td><span class="total">0</span> €</td>
+        </tr>
+        <tr>
+            <td>Produit 3</td>
+            <td><input type="nombre" class="quantite" min="0" value="0"></td>
+            <td><span class="prix">600</span> €</td>
+            <td><span class="total">0</span> €</td>
+        </tr>
+        <tr>
+            <td>Produit 4</td>
+            <td><input type="nombre" class="quantite" min="0" value="0"></td>
+            <td><span class="prix">450</span> €</td>
+            <td><span class="total">0</span> €</td>
+        </tr>
+        <tr>
+            <td>Produit 5</td>
+            <td><input type="nombre" class="quantite" min="0" value="0"></td>
+            <td><span class="prix">900</span> €</td>
+            <td><span class="total">0</span> €</td>
+        </tr>
             <tr>
-                <th class="productColumn">Produits</th>
-                <th class="quantityColumn">Quantités</th>
-                <th class="priceColumn">Prix en euros</th>
-                <th class="totalColumn">Total</th>
-            </tr>
-            <tr>
-                <td>Château Maison Noble Saint-Martin</td>
-                <td><input type="number" class="quantity" min="0" value="0"></td>
-                <td>180 €</td>
-                <td><span class="total">180</span> €</td>
-            </tr>
-            <tr>
-                <td>Produit 2</td>
-                <td><input type="number" class="quantity" min="0" value="0"></td>
-                <td>20 €</td>
-                <td><span class="total">0</span> €</td>
-            </tr>
-            <tr>
-                <td>Produit 3</td>
-                <td><input type="number" class="quantity" min="0" value="0"></td>
-                <td>30 €</td>
-                <td><span class="total">0</span> €</td>
-            </tr>
-            <tr>
-                <td>Produit 4</td>
-                <td><input type="number" class="quantity" min="0" value="0"></td>
-                <td>40 €</td>
-                <td><span class="total">0</span> €</td>
-            </tr>
-            <tr>
-                <td colspan="3">Frais de transport</td>
-                <td><span id="shipping">20</span> €</td>
-            </tr>
-            <tr>
-                <td colspan="3">Total</td>
-                <td><span id="grandTotal">0</span> €</td>
-            </tr>
-        </table>
-    </container>
+            <td>Produit 6</td>
+            <td><input type="nombre" class="quantite" min="0" value="0"></td>
+            <td><span class="prix">60</span> €</td>
+            <td><span class="total">0</span> €</td>
+        </tr>
+        <tr>
+            <td colspan="3">Frais de transport</td>
+            <td><span id="shipping">20</span> €</td>
+        </tr>
+        <tr>
+            <td colspan="3">Total</td>
+            <td><span id="grandTotal">0</span> €</td>
+        </tr>
+    </table>
 
     <script>
-        const orderTable = document.getElementById('orderTable');
-        const shippingSpan = document.getElementById('shipping');
-        const grandTotalSpan = document.getElementById('grandTotal');
+        // Récupération des éléments HTML nécessaires
+        const orderTable = document.getElementById('orderTable'); // Tableau de commande
+        const shippingSpan = document.getElementById('shipping'); // Élément de frais de port
+        const grandTotalSpan = document.getElementById('grandTotal'); // Élément pour afficher le total
 
+        // Fonction pour mettre à jour le total de la commande
         const updateTotal = () => {
-            let total = 0;
-            const rows = orderTable.getElementsByTagName('tr');
-            for (let i = 1; i < rows.length - 2; i++) {
-                const row = rows[i];
-                const quantity = parseInt(row.getElementsByClassName('quantity')[0].value);
-                const price = 180; // Prix fixe de 10 euros par produit
-                const rowTotal = quantity * price;
-                row.getElementsByClassName('total')[0].innerText = rowTotal.toFixed(2);
-                total += rowTotal;
-            }
-            const shipping = parseFloat(shippingSpan.innerText);
-            const grandTotal = total + shipping;
-            grandTotalSpan.innerText = grandTotal.toFixed(2);
-        };
+        let total = 0; // Initialisation du total à zéro
+        const rows = orderTable.getElementsByTagName('tr'); // Récupération de toutes les lignes du tableau de commande
+        for (let i = 1; i < rows.length - 2; i++) { // Boucle à travers chaque ligne du tableau de commande, en ignorant la première ligne d'en-tête et les deux dernières lignes de frais de port et de total
+        const row = rows[i]; // Sélection de la ligne actuelle
+        const quantity = parseInt(row.getElementsByClassName('quantite')[0].value); // Récupération de la quantité saisie pour ce produit
+        const price = parseFloat(row.getElementsByClassName('prix')[0].innerText); // Récupération du prix du produit
+        const rowTotal = quantity * price; // Calcul du total pour cette ligne en multipliant la quantité par le prix
+        row.getElementsByClassName('total')[0].innerText = rowTotal.toFixed(2); // Mise à jour de l'affichage du total pour cette ligne
+        total += rowTotal; // Ajout du total de cette ligne au total général
+        }
+        const shipping = parseFloat(shippingSpan.innerText); // Récupération du montant des frais de port
+        const grandTotal = total + shipping; // Calcul du total général en ajoutant le total des produits aux frais de port
+        grandTotalSpan.innerText = grandTotal.toFixed(2); // Mise à jour de l'affichage du total général
+};
 
-        orderTable.addEventListener('input', updateTotal());
+        // Écouteur d'événements pour détecter les changements dans le tableau de commande (saisie de quantités)
+        orderTable.addEventListener('input', updateTotal); // Lorsqu'une saisie est effectuée dans le tableau de commande, la fonction updateTotal est appelée
 
+        // Appel initial à la fonction updateTotal pour calculer le total initial
         updateTotal();
     </script>
+</container>
 </body>
 </html>
