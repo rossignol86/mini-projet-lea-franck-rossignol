@@ -5,101 +5,276 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bon de commande</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
 
-        table {
-            border-collapse: collapse;
-            width: 800px;
-        }
+container {
+  margin: 20px;
+}
 
-        th {
-            border: 1px solid #ddd;
-            padding: 8px;
-            background-color: #f2f2f2;
-        }
+.logo {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* style formulaire */        
+form {
+/* On centre le formulaire */
+margin: 20;
+width: 770px;
+/* Le contour du formulaire */
+padding: 1em;
+border: 1px solid #ccc;
+border-radius: 1em;
+text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+form li + li {
+  margin-top: 1em;
+}
+
+label {
+  /* Taille et alignement uniformes */
+  display: inline-block;
+  width: 150px;
+  text-align: left;
+}
+.formulaire{
+  /* On s'assure que les champs texte ont la même police
+     Par défaut, les zones de texte ont une police à chasse
+     fixe. */
+  font: 1em sans-serif;
+
+  /* Taille uniforme pour des champs */
+  width: 500px;
+  box-sizing: border-box;
+
+  /* On utilise la même bordure que pour le formulaire */
+  border: 1px solid #999;
+}
+
+
+
+textarea {
+  /* On aligne les textes sur plusieurs lignes avec leur
+     libellé. */
+  vertical-align: top;
+
+  /* On fournit un peut d'espace pour saisir du texte. */
+  height: 5em;
+
+  /* On permet de redimensionner verticalement. */
+  resize: vertical;
+}       
         
-        td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
+        
+        
+    
+ /* style tableau */
+       
+table {
+    border-collapse: collapse;
+    width: 800px;
+    margin: 0 auto;
+}
 
-        .colonneproduit {
-            width: 500px;
-        }
+th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    background-color: #f2f2f2;
+}
+        
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
 
-        .colonnequantite {
-            width: 50px;
-        }
+.colonneproduit {
+    width: 550px;
+    text-align: left;
+}
+        
+.nomproduit {
+    text-align: left;
+}
 
-        .colonneprix, .colonnetotal {
-            width: 100px;
-            padding: 10px;
-        }
-    </style>
+.colonnequantite {
+    width:80px;
+}
+
+.colonneprix, .colonnetotal {
+    width: 100px;
+    padding: 10px;
+}
+
+.container {
+    width: 800px;
+    text-align: center;
+}
+        
+
+.bouton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 30px;
+    margin: 20px 0px 20px 0px;
+}        
+        
+.bouton-commande {
+    display: inline-block;
+    width: 250px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 16px;
+    color: black;
+    text-decoration: none;
+    border: 2px solid orange;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.bouton-commande:hover, .bouton-commande:active {
+    background-color: orange;
+    color: white;
+
+</style>
 </head>
+    
 <body>
-<container>
-    <table id="orderTable">
-        <tr>
-            <th class="colonneproduit">Produits</th>
-            <th class="colonnequantite">Quantités</th>
-            <th class="colonneprix">Prix* en €</th>
-            <th class="colonnetotal">Total</th>
-        </tr>
-        <tr>
-            <td>Produit 1</td>
-            <td><input type="nombre" class="quantite" min="0" value="0"></td>
-            <td><span class="prix">188</span> €</td>
-            <td><span class="total">0</span> €</td>
-        </tr>
-        <tr>
-            <td>Produit 2</td>
-            <td><input type="nombre" class="quantite" min="0" value="0"></td>
-            <td><span class="prix">320</span> €</td>
-            <td><span class="total">0</span> €</td>
-        </tr>
-        <tr>
-            <td>Produit 3</td>
-            <td><input type="nombre" class="quantite" min="0" value="0"></td>
-            <td><span class="prix">600</span> €</td>
-            <td><span class="total">0</span> €</td>
-        </tr>
-        <tr>
-            <td>Produit 4</td>
-            <td><input type="nombre" class="quantite" min="0" value="0"></td>
-            <td><span class="prix">450</span> €</td>
-            <td><span class="total">0</span> €</td>
-        </tr>
-        <tr>
-            <td>Produit 5</td>
-            <td><input type="nombre" class="quantite" min="0" value="0"></td>
-            <td><span class="prix">900</span> €</td>
-            <td><span class="total">0</span> €</td>
-        </tr>
+<container>    
+<!-- Logo -->
+        <div class="logo">
+            <img src="images/logo450.jpg" alt="Votre logo">
+        </div>
+    
+<!-- Titre -->
+        <div>
+            <h1>Bon de commande</h1>
+        </div>
+    
+    
+ <!-- Bulletin de renseignement -->
+    
+        <form action="/page-de-traitement" method="post">
+            <ul>
+                <li>
+                    <label for="name">Nom :</label>
+                    <input class="formulaire"  type="text" id="name" name="user_name" />
+                </li>
+                <li>
+                    <label for="name">Prénom :</label>
+                    <input class="formulaire"  type="text" id="name" name="user_name" />
+                </li>
+                <li>
+                    <label for="name">Adresse :</label>
+                    <input class="formulaire" type="text" id="name" name="user_name" />
+                </li>
+                <li>
+                    <label for="name">Ville :</label>
+                    <input class="formulaire" type="text" id="name" name="user_name" />
+                </li>
+                <li>
+                    <label for="name">Téléphone :</label>
+                    <input class="formulaire" type="text" id="name" name="user_name" />
+                </li>
+                <li>
+                    <label for="mail"> Email :</label>
+                    <input class="formulaire" type="email" id="mail" name="user_email" />
+                </li>
+                <li>
+                    <label for="msg">Votre message :</label>
+                    <textarea class="formulaire" id="msg" name="user_message"></textarea>
+                </li>
+            </ul>    
+        </form>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        
+<!-- Tableau de commande -->
+    <container>
+        <table id="orderTable">
             <tr>
-            <td>Produit 6</td>
-            <td><input type="nombre" class="quantite" min="0" value="0"></td>
-            <td><span class="prix">60</span> €</td>
-            <td><span class="total">0</span> €</td>
-        </tr>
-        <tr>
-            <td colspan="3">Frais de transport</td>
-            <td><span id="shipping">20</span> €</td>
-        </tr>
-        <tr>
-            <td colspan="3">Total</td>
-            <td><span id="grandTotal">0</span> €</td>
-        </tr>
-    </table>
+                <th class="colonneproduit">Produits</th>
+                <th class="colonnequantite">Quantités</th>
+                <th class="colonneprix">Prix* en €</th>
+                <th class="colonnetotal">Total</th>
+            </tr>
+            <tr>
+                <td class="nomproduit">BOURGOGNE :</td>
+                <td ><input type="nombre" class="quantite" min="0" value="0"></td>
+                <td><span class="prix">188</span> €</td>
+                <td><span class="total">0</span> €</td>
+            </tr>
+            <tr>
+                <td class="nomproduit">BOURGOGNE :</td>
+                <td ><input type="nombre" class="quantite" min="0" value="0"></td>
+                <td><span class="prix">320</span> €</td>
+                <td><span class="total">0</span> €</td>
+            </tr>
+            <tr>
+                <td class="nomproduit">BORDEAUX : Château Maison Noble St-Martin</td>
+                <td ><input type="nombre" class="quantite" min="0" value="0"></td>
+                <td><span class="prix">180</span> €</td>
+                <td><span class="total">0</span> €</td>
+            </tr>
+            <tr>
+                <td class="nomproduit">BORDEAUX : Château Les Maubats</td>
+                <td ><input type="nombre" class="quantite" min="0" value="0"></td>
+                <td><span class="prix">480</span> €</td>
+                <td><span class="total">0</span> €</td>
+            </tr>
+            <tr>
+                <td class="nomproduit">AFRIQUE DU SUD : Southern Right</td>
+                <td ><input type="nombre" class="quantite" min="0" value="0"></td>
+                <td><span class="prix">132</span> €</td>
+                <td><span class="total">0</span> €</td>
+            </tr>
+                <tr>
+                <td class="nomproduit">Produit 6</td>
+                <td ><input type="nombre" class="quantite" min="0" value="0"></td>
+                <td><span class="prix">60</span> €</td>
+                <td><span class="total">0</span> €</td>
+            </tr>
+            <tr>
+                <td colspan="3">Frais de transport</td>
+                <td><span id="shipping">20</span> €</td>
+            </tr>
+            <tr>
+                <td colspan="3">Total</td>
+                <td><span id="grandTotal">0</span> €</td>
+            </tr>
+        </table>
 
-    <script>
+        <script>
         // Récupération des éléments HTML nécessaires
         const orderTable = document.getElementById('orderTable'); // Tableau de commande
         const shippingSpan = document.getElementById('shipping'); // Élément de frais de port
@@ -120,14 +295,20 @@
         const shipping = parseFloat(shippingSpan.innerText); // Récupération du montant des frais de port
         const grandTotal = total + shipping; // Calcul du total général en ajoutant le total des produits aux frais de port
         grandTotalSpan.innerText = grandTotal.toFixed(2); // Mise à jour de l'affichage du total général
-};
+        };
 
         // Écouteur d'événements pour détecter les changements dans le tableau de commande (saisie de quantités)
         orderTable.addEventListener('input', updateTotal); // Lorsqu'une saisie est effectuée dans le tableau de commande, la fonction updateTotal est appelée
 
         // Appel initial à la fonction updateTotal pour calculer le total initial
         updateTotal();
-    </script>
+        </script>
+    </container>
+    
+    <div class="bouton">
+    <a href="ff.rossignol@yahoo.fr" class="bouton-commande">Je valide ma commande</a>
+    </div>
+    
 </container>
 </body>
 </html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bon de commande</title>
+
+<style>
+    form {
+    /* On centre le formulaire */
+    margin: 0 auto;
+    width: 800px;
+    /* Le contour du formulaire */
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+    text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+form li + li {
+  margin-top: 1em;
+}
+
+label {
+  /* Taille et alignement uniformes */
+  display: inline-block;
+  width: 150px;
+  text-align: left;
+}
+
+input, textarea {
+  /* On s'assure que les champs texte ont la même police
+     Par défaut, les zones de texte ont une police à chasse
+     fixe. */
+  font: 1em sans-serif;
+
+  /* Taille uniforme pour des champs */
+  width: 500px;
+  box-sizing: border-box;
+
+  /* On utilise la même bordure que pour le formulaire */
+  border: 1px solid #999;
+}
+
+input:focus,
+textarea:focus {
+  /* On rajoute une mise en avant pour les éléments avec le focus. */
+  border-color: #000;
+}
+
+textarea {
+  /* On aligne les textes sur plusieurs lignes avec leur
+     libellé. */
+  vertical-align: top;
+
+  /* On fournit un peut d'espace pour saisir du texte. */
+  height: 5em;
+
+  /* On permet de redimensionner verticalement. */
+  resize: vertical;
+}
+    </style>
+    
+</head>   
+    <body>
+        <form action="/page-de-traitement" method="post">
+            <ul>
+                <li>
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" name="user_name" />
+                </li>
+                <li>
+                    <label for="name">Prénom :</label>
+                    <input type="text" id="name" name="user_name" />
+                </li>
+                <li>
+                    <label for="name">Adresse :</label>
+                    <input type="text" id="name" name="user_name" />
+                </li>
+                <li>
+                    <label for="name">Ville :</label>
+                    <input type="text" id="name" name="user_name" />
+                </li>
+                <li>
+                    <label for="name">Téléphone :</label>
+                    <input type="text" id="name" name="user_name" />
+                </li>
+                <li>
+                    <label for="mail"> Email :</label>
+                    <input type="email" id="mail" name="user_email" />
+                </li>
+                <li>
+                    <label for="msg">Votre message :</label>
+                    <textarea id="msg" name="user_message"></textarea>
+                </li>
+            </ul>    
+        </form>
+        
+</body>
+
+</html>
