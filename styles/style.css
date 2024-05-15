@@ -84,11 +84,10 @@ h3 {
 }
 
 .imgtheme{
-    width: 100%;
+    width: 800px;
     height: 400px;
     object-fit: cover;
     object-position: center;
-    transition: transform .3s;
     border-radius: 0px 0px 10px 10px;
 }
 

@@ -227,6 +227,40 @@ h4 {
 }
 
 
+ /* nos regions de france */
+ 
+.titre {
+  padding: 30px 0px 10px 0px;
+}
+
+.cartes {
+  width: 1025px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: right ;
+  padding: 5px 0px 20px 0px;
+}
+
+.imagecarte {
+  width:460px;
+  height: 550px;
+  justify-content: right;
+}
+
+.legendecarte {
+  width:500px;
+  text-align: justify;
+  color: #000000;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 0px 20px 0px 20px;
+}
+
+
+
+
+
  /* style footer */
 
  .ligneverte {
@@ -253,7 +287,6 @@ h4 {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   margin: 0px 20px 0px 20px
-
 }
 
 .infosplus {

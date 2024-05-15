@@ -27,7 +27,7 @@ h3 {
 p {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
-    line-height: 18px;
+    line-height: 20px;
     text-align: justify;
 }
 
@@ -109,15 +109,8 @@ ul {
     height: 400px;
     object-fit: cover;
     object-position: center;
-    transition: transform .3s;
     border-radius: 0px 0px 10px 10px;
 }
-
-.imgtheme:hover{
-    -ms-transform: scale(1.8); /* IE 9 */
-    -webkit-transform: scale(1.8); /* Safari 3-8 */
-    transform: scale(1.8);
-    }
 
 .themebordeaux {
     width: 300px;
@@ -220,4 +213,5 @@ ul {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
+    font
 }
